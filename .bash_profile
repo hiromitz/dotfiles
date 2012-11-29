@@ -1,6 +1,6 @@
-# Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
-# ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{extra,bash_prompt,exports,aliases,functions}; do
+# Load ~/.bash/.extra, ~/.bash/.bash_prompt, ~/.bash/.exports, ~/.bash/.aliases and ~/.bash/.functions
+# ~/.bash/.extra can be used for settings you don’t want to commit
+for file in ~/.bash/.{extra,bash_prompt,exports,aliases,functions}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
@@ -8,16 +8,16 @@ unset file
 # init z   https://github.com/rupa/z
 . ~/code/z/z.sh
 
-# init rvm
-source ~/.rvm/scripts/rvm
+# init rbenv
+eval "$(rbenv init -)"
 
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
 # Prefer US English and use UTF-8
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US"
+export LC_ALL="ja_JP.UTF-8"
+export LANG="ja_JP"
 
 # Add tab completion for SSH hostnames based on ~/.ssh/config, ignoring wildcards
 [ -e "$HOME/.ssh/config" ] && complete -o "default" -o "nospace" -W "$(grep "^Host" ~/.ssh/config | grep -v "[?*]" | cut -d " " -f2)" scp sftp ssh
