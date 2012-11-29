@@ -1,0 +1,6 @@
+# PATH settings
+PATH=$PATH:~/bin
+PATH=$PATH:~/homebrew/bin
+PATH=$PATH:~/homebrew/share/npm/bin
+PATH=$PATH:~/code/git-friendly
+export PATH
