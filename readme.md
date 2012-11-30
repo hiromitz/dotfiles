@@ -102,7 +102,7 @@ I recommend getting a [`.jshintrc`](https://github.com/jshint/node-jshint/blob/m
 ## Installation
 
 ```bash
-git clone https://github.com/addyosmani/dotfiles.git && cd dotfiles && ./sync.sh
+git clone https://github.com/hiromitz/dotfiles.git && cd dotfiles && ./sync.sh
 ```
 
 To update later on, just run the sync again.
