@@ -3,7 +3,7 @@
 
 # https://github.com/jamiew/git-friendly
 # the `push` command which copies the github compare URL to my clipboard is heaven
-sudo bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
+bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh ~/bin)
 
 # https://github.com/isaacs/nave
 # needs npm, obviously.
