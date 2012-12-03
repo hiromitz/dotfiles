@@ -56,4 +56,4 @@ function parse_git_branch() {
 # in the iterm tab
 # \[\e]1;\]$(basename $(dirname $PWD))/\W\[\a\]
 
-PS1="\[\e]2;$PWD\[\a\]\[\e]1;\]$(basename "$(dirname "$PWD")")/\W\[\a\]\[${BOLD}${MAGENTA}\]\u\[$WHITE\]: \[$ORANGE\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \")\[$GREEN\]\$(parse_git_branch)\[$WHITE\] \$ \[$RESET\]"
+PS1="\[${BOLD}${MAGENTA}\]\u\[$WHITE\]: \[$ORANGE\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" \")\[$GREEN\]\$(parse_git_branch)\[$WHITE\] \$ \[$RESET\]"
