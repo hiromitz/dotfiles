@@ -19,6 +19,17 @@ function server() {
 	python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
 }
 
+
+# PhoneGap command line interface
+function phonegap() {
+  local platform=$1
+  shift;
+  local command=$1
+  shift;
+  ~/code/phonegap/lib/${platform}/bin/${command} $@
+}
+
+
 # git log with per-commit cmd-clickable GitHub URLs (iTerm)
 function gf() {
   local remote="$(git remote -v | awk '/^origin.*\(push\)$/ {print $2}')"
