@@ -1,6 +1,6 @@
 # PATH settings
 PATH=$PATH:~/bin
-PATH=$PATH:~/homebrew/bin
-PATH=$PATH:~/homebrew/share/npm/bin
+PATH=$PATH:/usr/local/share/npm/bin
 PATH=$PATH:~/code/git-friendly
+PATH="$(brew --prefix josegonzalez/php/php54)/bin:$PATH"
 export PATH
