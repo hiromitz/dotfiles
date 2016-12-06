@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/miyanishi/.atom'
+let g:netrw_dirhist_2='/Users/miyanishi/dotfiles'
+let g:netrw_dirhist_3='/Library/WebServer/Documents/blog/wp-content/themes/twentysixteen'
+let g:netrw_dirhist_4='/Users/miyanishi/workspace/2fc/nissan/nissan-mockup/gulp'
+let g:netrw_dirhist_5='/Users/miyanishi/workspace/soundonlive/apps/soundonlive/client/bower_components'
+let g:netrw_dirhist_6='/Library/WebServer/Documents/dist/mdn/styles'

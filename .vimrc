@@ -1,55 +1,3 @@
-set nocompatible               " Be iMproved
-
- if has('vim_starting')
-   set runtimepath+=~/.vim/bundle/neobundle.vim/
- endif
-
- call neobundle#rc(expand('~/.vim/bundle/'))
-
- " Let NeoBundle manage NeoBundle
- NeoBundleFetch 'Shougo/neobundle.vim'
-
- " Recommended to install
- " After install, turn shell ~/.vim/bundle/vimproc, (n,g)make -f your_machines_makefile
- NeoBundle 'Shougo/vimproc'
-
- " My Bundles here:
- "
- " Note: You don't set neobundle setting in .gvimrc!
- " Original repos on github
- NeoBundle 'tpope/vim-fugitive'
- NeoBundle 'Lokaltog/vim-easymotion'
- NeoBundle 'rstacruz/sparkup', {'rtp': 'vim/'}
- " vim-scripts repos
- NeoBundle 'L9'
- " NeoBundle 'FuzzyFinder'
- NeoBundle 'rails.vim'
- " Non github repos
- NeoBundle 'git://git.wincent.com/command-t.git'
- " gist repos
- "NeoBundle 'gist:Shougo/656148', {
- "      \ 'name': 'everything.vim',
- "      \ 'script_type': 'plugin'}
- " Non git repos
- " NeoBundle 'http://svn.macports.org/repository/macports/contrib/mpvim/'
- " NeoBundle 'https://bitbucket.org/ns9tks/vim-fuzzyfinder'
- NeoBundle 'https://github.com/Shougo/unite.vim.git'
- NeoBundle 'https://github.com/Shougo/vimfiler.vim.git'
-
- " ...
-
- filetype plugin indent on     " Required!
- "
- " Brief help
- " :NeoBundleList          - list configured bundles
- " :NeoBundleInstall(!)    - install(update) bundles
- " :NeoBundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-
- " Installation check.
- NeoBundleCheck
-" /NeoBundle
-" ========================================
-
 " Make vim more useful
 set nocompatible
 " Enhance command-line completion
@@ -94,7 +42,7 @@ set incsearch
 " Always show status line
 set laststatus=2
 " Enable mouse in all modes
-set mouse=a
+"set mouse=a
 " Disable error bells
 set noerrorbells
 " Don’t reset cursor to start of line when moving around.
@@ -107,6 +55,11 @@ set shortmess=atI
 set showmode
 " Show the filename in the window titlebar
 set title
+"if exists("&relativenumber")
+  " Use relative line numbers
+"  set relativenumber
+"  au BufReadPost * set relativenumber
+"endif
 " Start scrolling three lines before the horizontal window border
 set scrolloff=3
 
@@ -119,9 +72,3 @@ function! StripWhitespace ()
 	call setreg('/', old_query)
 endfunction
 noremap <leader>ss :call StripWhitespace ()<CR>
-
-vmap <C-c> y:call system("pbcopy", getreg("\""))<CR>
-nmap <C-v> :call setreg("\"",system("pbpaste"))<CR>p
-
-nnoremap <C-f> :<C-u>VimFiler -buffer-name=explorer -split -simple -winwidth=35 -toggle -no-quit<CR>
-"nnoremap <C-f> :<C-u>VimFiler<CR>

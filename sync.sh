@@ -2,27 +2,7 @@
 cd "$(dirname "$0")"
 git pull
 function doIt() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "sync.sh" --exclude "README.md" -av . ~
-}
-
-function setGit() {
-	echo "--------------------------------------------------------"
-	echo "   git configuration"
-	echo "--------------------------------------------------------"
-
-	# set git user name
-	read -p "git user name? " name
-	# set git email
-	read -p "git user.email? " email
-
-	echo
-
-	# execute git configuration
-	echo "execute: git config --global user.name \"${name}\""
-	git config --global user.name "${name}"
-
-	echo execute: git config --global user.email "${email}"
-	git config --global user.email "${email}"
+	rsync --exclude "install-deps.sh" --exclude ".git/" --exclude ".DS_Store" --exclude "sync.sh" --exclude "readme.md" -av . ~
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -32,7 +12,6 @@ else
 	echo
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		doIt
-		setGit
 	fi
 fi
 unset doIt
